@@ -103,7 +103,9 @@ class FA {
         int tst = Integer.parseInt(in.readLine());int binsa;
         int bins[] = new int[tst];
         long timings[] = new long[tst];
+        //For writing bins into a textfile
         PrintWriter binfile = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Super\\Desktop\\bins.txt",true)));
+        //For writing time into a textfile
         PrintWriter timefile = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\Super\\Desktop\\timings.txt",true)));
         for(int k=0;k<tst;k++) {
             int n = Integer.parseInt(in.readLine());
@@ -126,9 +128,9 @@ class FA {
             long endTime = System.nanoTime();
             long totalTime = endTime - startTime;
             binfile.println(binsa);
-            timefile.println(totalTime/1000000);
+            timefile.println(totalTime/1000000); //ns -> ms
             bins[k] = binsa;
-            timings[k] = totalTime/1000000;
+            timings[k] = totalTime/1000000; //ns -> ms
         }
         System.out.println("==========================================");
         System.out.println("Case\tBins\tTime");
